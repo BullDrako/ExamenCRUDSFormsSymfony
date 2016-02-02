@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <table>
+        {% for a in as %}
+            <tr>
+                <td>{{ a.id }}</td>
+                <td>{{ a.aaaa1 }}</td>
+                <td>{{ a.aaaa2 }}</td>
+                <td>{{ a.aaaa3 }}</td>
+                <td>{{ a.aaaa4 }}</td>
+
+                <td>{{ a.createdAt|date("d/m/Y H:i:s") }}</td>
+                <td>{{ a.updatedAt|date("d/m/Y H:i:s") }}</td>
+                <td><a href="{{ path('app_aaaa_actualizar', {'id': a.id}) }}">acualizar</a></td>
+                <td><a href="{{ path('app_aaaa_eliminar', {'id': a.id}) }}">borrar</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div style="margin-top: 10px">
+        <a href="{{ path('app_aaaa_insertar') }}">Nueva cosa</a>
+    </div>
+{% endblock %}
